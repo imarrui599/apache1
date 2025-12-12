@@ -10,14 +10,14 @@ env:
 
 jobs:
   build-and-publish-image:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     permissions:
-      contest: read
+      contests: read
       packages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - mame: Log in the container REGISTRY
+      - name: Log in the container REGISTRY
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
